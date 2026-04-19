@@ -11,7 +11,7 @@ import {
 import '@xyflow/react/dist/style.css';
 
 import { useWorkflow } from '../../store/WorkflowContext';
-import { StartNode, TaskNode, ApprovalNode, AutomatedNode, EndNode } from '../Nodes';
+import { StartNode, TaskNode, ApprovalNode, AutomatedNode, EndNode } from '../Nodes/index';
 import { v4 as uuidv4 } from 'uuid';
 
 const nodeTypes: NodeTypes = {
