@@ -5,13 +5,13 @@ A functional prototype of an HR Workflow Designer module built with React, TypeS
 ## Preview 
 
 ### Home Canvas
-![Home](assets/Home.png)
+![Home](assets/Home_Page.png)
 
 ### Node Configuration Panel
-![Node](assets/Node.png)
+![Node](assets/Node_View.png)
 
 ### Simulation Sandbox
-![Sandbox](assets/Sandbox.png)
+![Sandbox](assets/Sandbox_View.png)
 
 ## Getting Started
 
