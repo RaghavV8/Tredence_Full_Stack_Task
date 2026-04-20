@@ -1,4 +1,4 @@
-# HR Workflow Designer
+#Workflow Designer
 
 A functional prototype of an HR Workflow Designer module built with React, TypeScript, React Flow, and TailwindCSS.
 
