@@ -63,12 +63,12 @@ export const SimulationPanel: React.FC<SimulationPanelProps> = ({ onClose }) => 
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm">
-      <div className="bg-white rounded-xl shadow-2xl w-full max-w-2xl mx-4 max-h-[90vh] flex flex-col">
+      <div className="bg-slate-900 rounded-xl shadow-2xl w-full max-w-2xl mx-4 max-h-[90vh] flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-orange-200">
           <div>
-            <h2 className="text-lg font-bold text-slate-800">Workflow Sandbox</h2>
-            <p className="text-xs text-slate-500">Validate and simulate your workflow step-by-step.</p>
+            <h2 className="text-lg font-bold text-orange-500">Workflow Sandbox</h2>
+            <p className="text-xs text-orange-700">Validate and simulate your workflow step-by-step.</p>
           </div>
           <button onClick={onClose} className="text-slate-400 hover:text-slate-700 transition-colors">
             <X size={22} />
@@ -79,20 +79,20 @@ export const SimulationPanel: React.FC<SimulationPanelProps> = ({ onClose }) => 
         <div className="flex-1 overflow-y-auto p-6 space-y-5">
           {/* Workflow summary */}
           <div className="flex gap-4">
-            <div className="flex-1 bg-slate-50 border border-slate-200 rounded-lg p-3 text-center">
-              <div className="text-2xl font-bold text-slate-700">{nodes.length}</div>
-              <div className="text-xs text-slate-500">Nodes</div>
+            <div className="flex-1 bg-orange-200 border border-orange-200 rounded-lg p-3 text-center">
+              <div className="text-2xl font-bold text-black">{nodes.length}</div>
+              <div className="text-xs text-black">Nodes</div>
             </div>
-            <div className="flex-1 bg-slate-50 border border-slate-200 rounded-lg p-3 text-center">
-              <div className="text-2xl font-bold text-slate-700">{edges.length}</div>
-              <div className="text-xs text-slate-500">Connections</div>
+            <div className="flex-1 bg-orange-200 border border-orange-200 rounded-lg p-3 text-center">
+              <div className="text-2xl font-bold text-black">{edges.length}</div>
+              <div className="text-xs text-black">Connections</div>
             </div>
           </div>
 
           {/* Validation Errors */}
           {validationErrors.length > 0 && (
             <div className="space-y-2">
-              <h3 className="text-sm font-semibold text-slate-700">Validation Results</h3>
+              <h3 className="text-sm font-semibold text-orange-500">Validation Results</h3>
               {validationErrors.map((err, i) => (
                 <div
                   key={i}
@@ -112,15 +112,15 @@ export const SimulationPanel: React.FC<SimulationPanelProps> = ({ onClose }) => 
           {/* Simulation Log */}
           {steps.length > 0 && (
             <div>
-              <h3 className="text-sm font-semibold text-slate-700 mb-3">Execution Log</h3>
+              <h3 className="text-sm font-semibold text-orange-500 mb-3">Execution Log</h3>
               <div className="space-y-2">
                 {steps.map((step, i) => (
                   <div
                     key={step.nodeId + i}
-                    className="flex items-start gap-3 p-3 border border-slate-100 rounded-lg bg-slate-50 animate-fade-in"
+                    className="flex items-start gap-3 p-3 border border-orange-200 rounded-lg bg-orange-200 animate-fade-in"
                   >
                     <div className="flex items-center gap-2 shrink-0 pt-0.5">
-                      <span className="text-xs text-slate-400 w-5 text-right">{i + 1}</span>
+                      <span className="text-xs text-slate-900 w-5 text-right">{i + 1}</span>
                       <ChevronRight size={14} className="text-slate-300" />
                       <StatusIcon status={step.status} />
                     </div>
@@ -155,32 +155,32 @@ export const SimulationPanel: React.FC<SimulationPanelProps> = ({ onClose }) => 
 
           {/* Serialized JSON */}
           <details className="group">
-            <summary className="cursor-pointer text-xs font-semibold text-slate-500 hover:text-slate-700 select-none">
+            <summary className="cursor-pointer text-xs font-semibold text-white hover:text-orange-700 select-none">
               View Workflow JSON payload
             </summary>
-            <pre className="mt-2 p-3 bg-slate-900 text-green-400 text-xs rounded-md overflow-auto max-h-48 leading-relaxed">
+            <pre className="mt-2 p-3 bg-black text-green-400 text-xs rounded-md overflow-auto max-h-48 leading-relaxed">
               {payload}
             </pre>
           </details>
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-4 border-t border-slate-200 flex items-center justify-between gap-3 bg-slate-50 rounded-b-xl">
+        <div className="px-6 py-4 border-t border-orange-200 flex items-center justify-between gap-3 bg-slate-900 rounded-b-xl">
           <button
             onClick={onClose}
-            className="px-4 py-2 text-sm text-slate-600 border border-slate-300 rounded-md hover:bg-slate-100 transition-colors"
+            className="px-4 py-2 text-sm text-white border border-orange-500 rounded-md hover:bg-orange-500 transition-colors"
           >
             Close
           </button>
           <button
             onClick={handleRun}
             disabled={status === 'running'}
-            className="flex items-center gap-2 px-5 py-2 bg-primary-600 text-white rounded-md text-sm font-medium hover:bg-primary-700 disabled:opacity-60 disabled:cursor-not-allowed transition-colors shadow-sm"
+            className="flex items-center gap-2 px-5 py-2 bg-slate-600 text-white rounded-md text-sm font-medium hover:bg-[#3ec604] disabled:opacity-60 disabled:cursor-not-allowed transition-colors shadow-sm"
           >
             {status === 'running' ? (
               <><Loader2 size={16} className="animate-spin" /> Simulating…</>
             ) : (
-              <><Play size={16} /> Run Simulation</>
+              <><Play size={16} style={{}}/> Run Simulation</>
             )}
           </button>
         </div>
