@@ -48,7 +48,7 @@ export const ApprovalNode: React.FC<NodeProps> = ({ data, selected }) => {
       title={nodeData.title || 'Approval'}
       icon={<UserCheck size={16} />}
       selected={selected}
-      className="border-amber-400"
+      className="border-amber-600"
     >
       <div className="text-xs">
         <span className="font-semibold">Role:</span> {nodeData.approverRole || 'Unassigned'}
