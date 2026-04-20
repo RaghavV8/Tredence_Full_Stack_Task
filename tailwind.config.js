@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        ubuntu: ['Ubuntu', 'sans-serif'],
+        roboto: ['Roboto','sans-serif'],
+        dancing: ['Dancing Script','sans-serif']
+      },
       colors: {
         primary: {
           50: '#eff6ff',
