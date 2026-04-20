@@ -83,9 +83,26 @@ export const WorkflowCanvas: React.FC = () => {
         fitViewOptions={{ padding: 0.2 }}
         className="bg-slate-50"
       >
-        <Background gap={16} color="#cbd5e1" />
+        <Background gap={16} color="#black" />
         <Controls className="bg-white border border-slate-200 rounded shadow-sm" />
-        <MiniMap zoomable pannable className="border border-slate-200 rounded shadow-sm" />
+        <MiniMap zoomable pannable className="border border-black rounded shadow-sm "
+        style={{ backgroundColor: '#334155' }} 
+        nodeColor={(node)=>{
+          switch(node.type){
+            case 'startNode':
+              return '#22c55e'; 
+            case 'taskNode':
+              return '#3b82f6'; 
+            case 'approvalNode':
+              return '#eab308'; 
+            case 'automatedNode':
+              return '#a855f7'; 
+            case 'endNode':
+              return '#ef4444';
+            default:
+              return '#94a3b8'; 
+          }
+        }} />
         <Panel
           position="top-center"
           className="bg-white px-3 py-1.5 shadow-sm border border-slate-200 rounded text-xs text-slate-500 pointer-events-none"

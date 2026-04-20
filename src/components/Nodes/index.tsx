@@ -26,6 +26,7 @@ export const TaskNode: React.FC<NodeProps> = ({ data, selected }) => {
       title={nodeData.title || 'Task'}
       icon={<CheckSquare size={16} />}
       selected={selected}
+      className='border-primary-500 '
     >
       {nodeData.assignee && (
         <div className="text-xs mb-1"><span className="font-semibold">Assignee:</span> {nodeData.assignee}</div>

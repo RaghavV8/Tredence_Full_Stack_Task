@@ -5,7 +5,7 @@ import type { MockAction } from '../../types/workflow';
 import { mockApi } from '../../api/mockApi';
 
 const Label: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <label className="block text-xs font-semibold text-slate-600 mb-1">{children}</label>
+  <label className="block text-xs font-semibold text-orange-600 mb-1">{children}</label>
 );
 
 const Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>> = (props) => (
@@ -53,10 +53,10 @@ const KVEditor: React.FC<{ pairs: KVPair[]; onChange: (pairs: KVPair[]) => void;
   };
 
   return (
-    <div className="mb-4">
+    <div className="mb-4 bg">
       <div className="flex items-center justify-between mb-1">
         <Label>{label}</Label>
-        <button onClick={add} className="text-primary-500 hover:text-primary-700 flex items-center gap-1 text-xs font-medium">
+        <button onClick={add} className="text-white hover:text-yellow-500 flex items-center gap-1 text-xs font-medium">
           <Plus size={12} /> Add
         </button>
       </div>
@@ -217,11 +217,11 @@ const EndNodeForm: React.FC<{ data: any; onChange: (data: any) => void }> = ({ d
           role="switch"
           aria-checked={!!data.showSummary}
           onClick={() => onChange({ showSummary: !data.showSummary })}
-          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${data.showSummary ? 'bg-primary-600' : 'bg-slate-300'}`}
+          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${data.showSummary ? 'bg-orange-600' : 'bg-slate-300'}`}
         >
           <span className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform shadow ${data.showSummary ? 'translate-x-6' : 'translate-x-1'}`} />
         </button>
-        <span className="text-sm text-slate-700">Show Summary Report</span>
+        <span className="text-sm text-orange-600">Show Summary Report</span>
       </div>
     </div>
   </>
@@ -261,17 +261,17 @@ export const NodeConfigPanel: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-full">
-      <div className="flex items-center justify-between px-4 py-3 border-b border-slate-200 bg-slate-50">
+    <div className="flex flex-col h-full border-black">
+    <div className="flex items-center justify-between px-4 py-3 bg-slate-700">
         <div>
-          <h3 className="font-semibold text-slate-800 text-sm">{FORM_TITLE[nodeType] || 'Node Config'}</h3>
-          <p className="text-xs text-slate-400">ID: {selectedNode.id.slice(0, 8)}…</p>
+          <h3 className="font-semibold text-orange-500 text-sm">{FORM_TITLE[nodeType] || 'Node Config'}</h3>
+          <p className="text-xs text-orange-500">ID: {selectedNode.id.slice(0, 8)}…</p>
         </div>
-        <button onClick={() => setSelectedNodeId(null)} className="text-slate-400 hover:text-slate-600 transition-colors">
+        <button onClick={() => setSelectedNodeId(null)} className="text-slate-400 hover:text-orange-500 transition-colors">
           <X size={18} />
         </button>
       </div>
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 border-black bg-slate-900  overflow-y-auto p-4">
         {renderForm()}
       </div>
     </div>

@@ -23,7 +23,7 @@ export const NodeWrapper: React.FC<NodeWrapperProps> = ({
   return (
     <div
       className={`min-w-[200px] bg-white rounded-md shadow-md border-2 transition-all ${
-        selected ? 'border-primary-500 shadow-lg' : 'border-slate-200'
+        selected ? 'shadow-lg' : 'border-slate-200'
       } ${className}`}
     >
       {hasTarget && (
