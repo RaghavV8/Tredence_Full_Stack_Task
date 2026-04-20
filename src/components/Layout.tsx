@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Sidebar } from './UI/Sidebar';
 import { WorkflowCanvas } from './Canvas/WorkflowCanvas';
 import { NodeConfigPanel } from './Forms/NodeConfigPanel';
@@ -15,7 +16,11 @@ export const Layout: React.FC = () => {
       
       <main className="flex-1 flex flex-col relative">
         <header className="h-14 border-b border-slate-700 flex items-center justify-between px-4 bg-slate-900 z-10 shadow-sm">
-          <h1 className="text-3xl text-orange-500 font-dancing ">Workflow Designer</h1>
+          <Link to="https://github.com/RaghavV8/Tredence_Full_Stack_Task"
+          target="_blank" 
+          rel="noopener noreferrer"> 
+          <h1 className="text-3xl text-orange-500 font-dancing cursor-pointer">Workflow Designer</h1>
+          </Link>
           <button
             onClick={() => setIsSandboxOpen(true)}
             className="px-4 py-2 bg-orange-600 text-black hover:text-white rounded-md hover:bg-yellow-500 text-sm font-medium transition-colors shadow-sm font-ubuntu"
