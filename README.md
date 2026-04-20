@@ -2,7 +2,19 @@
 
 A functional prototype of an HR Workflow Designer module built with React, TypeScript, React Flow, and TailwindCSS.
 
+## Preview 
+
+### Home Canvas
+![Home](assets/Home.png)
+
+### Node Configuration Panel
+![Node](assets/Node.png)
+
+### Simulation Sandbox
+![Sandbox](assets/Sandbox.png)
+
 ## Getting Started
+
 
 ```bash
 npm install
